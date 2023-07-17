@@ -1,24 +1,23 @@
-Unpacks a Docker image.
+# Unpacks a Docker image.
 
 ## Usage
 
-    usage: undocker.py [-h] [--ignore-errors] [--output OUTPUT] [--verbose]
-                       [--debug] [--list] [--layer LAYER]
+    usage: undocker.py [--help] [--layer LAYER] [--list] [--ignore-errors]
+                       [--output OUTPUT] [--verbose] [--debug]
                        image
 
     positional arguments:
       image
 
     optional arguments:
-      -h, --help            show this help message and exit
-      --ignore-errors, -i   Ignore OS errors when extracting files
-      --output OUTPUT, -o OUTPUT
-                            Output directory (defaults to ".")
-      --verbose, -v
-      --debug, -d
-      --list, --ls          List layers in an image
-      --layer LAYER, -l LAYER
-                            Extract only the specified layer
+      -h, --help            Show this help message and exit
+      -i, --ignore-errors   Ignore OS errors when extracting files
+      -l, --layer LAYER     Extract only the specified layer
+          --ls, --list      List layers in an image
+      -o, --output OUTPUT   Output directory (defaults to ".")
+      -v, --verbose
+      -d, --debug
+                            
 
 ## Examples
 
@@ -41,8 +40,8 @@ List the layers in an image:
 Extract only specific layers:
 
     $ docker save busybox |
-      undocker -o busybox -v \
-      -l 4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125 \
+       undocker -v -o busybox \
+       -l 4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125 \
       busybox
     INFO:undocker:extracting image busybox (4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125)
     INFO:undocker:extracting layer 4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125
