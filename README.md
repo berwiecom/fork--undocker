@@ -42,7 +42,7 @@ Extract only specific layers:
     $ docker save busybox |
        undocker -v -o busybox \
        -l 4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125 \
-      busybox
+       busybox
     INFO:undocker:extracting image busybox (4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125)
     INFO:undocker:extracting layer 4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125
 
